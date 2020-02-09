@@ -1,7 +1,16 @@
 public class Main {
 
     public static void makeCatHappy(DomesticCat cat) {
-        // TODO поднимите или опустите температуру в доме, чтобы код был счастлив
+        // TODO поднимите или опустите температуру в доме, чтобы кот:) был счастлив
+        if (cat.getHouse().getTemperature() < DomesticCat.WARM_TEMPERATURE) {
+            for (int i = cat.getHouse().getTemperature(); i <= DomesticCat.WARM_TEMPERATURE; i++) {
+                cat.getHouse().makeWarmer();
+            }
+        } else if (cat.getHouse().getTemperature() > DomesticCat.MAX_TEMPERATURE) {
+            for (int i = cat.getHouse().getTemperature(); i >= DomesticCat.WARM_TEMPERATURE + 1; i--) {
+                cat.getHouse().makeColder();
+            }
+        }
     }
 
     public static void main(String[] args) {
